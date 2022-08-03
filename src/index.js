@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(routes)
 
 app.listen(5000,() => {
-    console.log("on");
+    console.log("rodando na porta 5000");
 })
 
 

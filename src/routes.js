@@ -1,19 +1,9 @@
-import { Router } from "express";
+import { response, Router } from "express";
+import { usersControllers } from "./controllers/usersController.js";
 const routes = Router();
 
-const database = [
-    {nome: "Lucas", idade: 12},
-    {nome: "Geovane", idade: 14}
-];
+routes.get('/', usersControllers.listarUsuario)
 
-routes.get('/', (req, res)=>{
-    return res.status(200).json(database)
-})
-
-routes.post('/', (req, res)=> {
-    const { nome, idade } = req.body;
-    database.push(nome, idade);
-    return res.status(201).json({'mensagem': `usuario ${nome} criado com ${idade} anos`})
-})
+routes.post('/', usersControllers.criarUsuario)
 
 export {routes};
