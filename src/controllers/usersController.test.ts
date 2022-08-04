@@ -1,5 +1,11 @@
 describe('Users Controller', ()=>{
     it('Deve somoar 1+1', ()=>{
-        expect(1+1).toBe(2);
+        function soma(a: number,b:number){
+            return a+b;
+        }
+
+        const res = soma(1,2)
+
+        expect(res).toBe(3);
     })
 })
